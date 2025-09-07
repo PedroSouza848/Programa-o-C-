@@ -9,7 +9,7 @@ int main() {
 
     //Carta 02
     char estado2, codigo2[10], nome2[50];
-    float area2, pib2, densi2, pibper2, super2;
+    float area2, densi2, pib2, pibper2, super2;
     int ponturis2;
     unsigned int populacao2;
 
@@ -29,7 +29,7 @@ int main() {
     scanf("%s", nome1);
 
     printf("\nInforme qual a população da cidade: ");
-    scanf("%d", &populacao1);
+    scanf("%u", &populacao1);
 
     printf("\nInforme a área da cidade: ");
     scanf("%f", &area1);
@@ -40,13 +40,12 @@ int main() {
     printf("\nPor fim, informe o número de pontos turísticos: ");
     scanf("%d", &ponturis1);
 
-    densi1 = populacao1 / area1;
+    densi1 = (float) populacao1 / area1;
     pibper1 = pib1 / populacao1;
-    super1 = (float) populacao1 + area1 + pib1 + (float) ponturis1 + pibper1;
-    super1 -= densi1;
+    super1 = (float) populacao1 + area1 + pib1 + (float) ponturis1 + pibper1 +(1 / densi1);
     
-
                  //2º CARTA
+
     system("clear");
     printf("-=--=--=--=--=--=--=--=--=-\n");
     printf(" Vamos para a carta nº02:!\n");
@@ -63,7 +62,7 @@ int main() {
     scanf("%s", nome2);
 
     printf("\nInforme qual a população da cidade: ");
-    scanf("%d", &populacao2);
+    scanf("%u", &populacao2);
 
     printf("\nInforme a área da cidade: ");
     scanf("%f", &area2);
@@ -74,8 +73,9 @@ int main() {
     printf("\nPor fim, informe o número de pontos turísticos: ");
     scanf("%d", &ponturis2);
 
-    densi2 = populacao2 / area2;
+    densi2 = (float) populacao2 / area2;
     pibper2 = pib2 / populacao2;
+    super2 = (float) populacao2 + area2 + pib2 + (float) ponturis2 + pibper2 + (1 / densi2);
 
     printf("\n-=--=--=--=--=--=--=--=--=--=--=---=---=---=-\n");
     printf("Parabéns, você chegou ao fim do 2º cadastro!\n");
@@ -96,6 +96,7 @@ int main() {
     printf("\nNúmero de Pontos Turísticos: %d", ponturis1);
     printf("\nDensidade popuacional: %.2f", densi1);
     printf("\nPIB per Capita: %.2f", pibper1);
+    printf("\nSuper Poder: %.2f", super1);
     printf("\n");
 
     printf("\nCARTA 02:\n");
@@ -107,7 +108,8 @@ int main() {
     printf("\nPIB: %f bilhões de reais", pib2);
     printf("\nNúmero de Pontos Turísticos: %d", ponturis2);
     printf("\nDesidade populacional: %.2f", densi2);
-    printf("\nPIB per Capita: %.2f \n", pibper2);
+    printf("\nPIB per Capita: %.2f", pibper2);
+    printf("\nSuper Poder: %.2f", super2);
 
     printf("\n-=--=--=--=--=--=--=--=--=--=--=-\n");
     printf(" Vamos agora comparar as cartas!");
